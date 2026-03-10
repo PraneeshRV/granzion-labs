@@ -19,9 +19,9 @@ The attack proves:
 3. The system has no loop-breaking mechanism
 4. Resource consumption (messages table, audit entries) grows unbounded
 
-Vulnerabilities exploited (all existing — no lab changes required):
+Vulnerabilities exploited:
+- Orchestrator Agent: no delegation depth limit
 - Identity MCP create_delegation(): IT-03 — no cycle detection
-- Orchestrator: no delegation depth limit
 - Comms MCP send_message/forge_message: no rate limiting, no dedup
 - Data MCP execute_sql(): used to verify delegation state (T-02)
 """

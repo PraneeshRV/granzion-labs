@@ -17,11 +17,11 @@ and its blind trust in A2A messages. The attacker:
 4. Verifies the Orchestrator's mailbox is saturated with attacker messages,
    confirming legitimate tasks would be crowded out
 
-Vulnerabilities exploited (all existing — no lab changes required):
+Vulnerabilities exploited
+- Orchestrator Agent: trusts A2A messages without sender identity verification
 - Comms MCP forge_message(): C-02/C-03 — no sender verification
 - Comms MCP intercept_channel(): C-01 — no authorization check
 - Comms MCP send_message/broadcast: no rate limiting
-- Orchestrator: trusts A2A messages without sender identity verification
 - Data MCP read_data(): cross-user data access, no permission checks
 - Data MCP execute_sql(): SQL injection, no audit logging (visibility gap)
 """
